@@ -17,11 +17,11 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{tabto}
 \input{glyphtounicode}
 
 % Font
 \usepackage{charter}
-
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -44,70 +44,37 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large 
-}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+  \vspace{-6pt}\scshape\raggedright\large 
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
 %-------------------------
-% Custom commands
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      #1 & \small#2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      #1 & \small#2 \\
-    \end{tabular*}\vspace{-5pt}
-}
-
-\newcommand{\resumeLeadershipHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & \small#2 \\
-    \end{tabular*}\vspace{-5pt}
-}
-
-\newcommand{\resumeItem}[1] {\item\small {#1 \vspace{-4pt}}}
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1} \vspace{-4pt}}
+% New bullet point style
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$ \hspace{0pt}}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.1in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeGroupListStart}{\begin{itemize}[leftmargin=0.05in, label={}]}
+\newcommand{\resumeGroupListEnd}{\end{itemize}}
+\newcommand{\resumeSingleLineHeading}[2]{
+    \item
+        \begin{tabular*}{0.985\textwidth}{l@{\extracolsep{\fill}}r}
+          #1 & \small#2 \\
+        \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeDoubleLineHeading}[4]{
+    \vspace{-2pt}\item
+        \begin{tabular*}{0.985\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            #1 & \small#2 \\
+            \textit{\small#3} & \textit{\small #4} \\
+        \end{tabular*}\vspace{-5pt}
+}
 \newcommand{\resumeItemListStart}{\begin{itemize}\vspace{-2pt}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}}
+\newcommand{\resumeItem}[1] {\item\small {#1 \vspace{-4pt}}}
 
-\newcommand{\resumeItemListStartWithDate}{\begin{itemize}\vspace{-0pt}}
-\newcommand{\resumeItemListEndWithDate}{\end{itemize}\vspace{-10pt}}
-
-\newcommand{\resumeItemWithDate}[2] {\item\small {#1 \hfill #2 \vspace{-8pt}}}
-%---------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+%---------------------------------RESUME STARTS HERE---------------------------------
 \begin{document}
-
-%----------------------------------------------------------------------------HEADING----------------------------------------------------------------------------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
-
+%---------------------------------HEADING---------------------------------
 \begin{center}
     \textbf{\Huge \scshape Frederick Go} \\ \vspace{1pt}
     \href{mailto:hyeongo0317@gmail.com}{\underline{hyeongo0317@gmail.com}} $|$ 
@@ -116,115 +83,116 @@
     \href{https://github.com/itsmefredgo}{\underline{github.com/itsmefredgo}} $|$
     \href{https://freddiego.dev}{\underline{freddiego.dev}}
 \end{center}
-
-%-----------------------------------------------------------------------------EXPERIENCE-----------------------------------------------------------------------------
+%---------------------------------EXPERIENCE---------------------------------
 \section{Experience}
-  \resumeSubHeadingListStart
+    \resumeGroupListStart
   
-    \resumeSubheading
-      {\textbf{Machine Learning Operations Engineer Intern - Production Pipeline Team Lead}}{May 2024 - Aug 2024}
-      {VosynAI}{Toronto, ON (remote)}
-      \resumeItemListStart
-        \resumeItem{Led a team of 18 people to design and build a pipeline for a global CDN service targeting 200+ million users.}
-        \resumeItem{Conducted agile sprints, assigning tasks and managing progress through weekly meetings.}
-        \resumeItem{Automated Docker image processes using GitHub workflow, integrating with AWS services.}
-        \resumeItem{Architected and provisioned AWS services (Lambda, EC2, ECR, ECS, S3, etc.) to build and maintain the pipeline.}
-        \resumeItem{Acted as the point of contact in a cross-functional environment within the company.}
-        \resumeItem{Written python scripts to process multi-modal data efficiently to deliver a smooth user experience. }
-    \resumeItemListEnd
-    
-    \resumeSubheading
-      {\textbf{Full-stack Developer} \emph{\small{(freelance/volunteer)}}}{Dec 2022 - Dec 2023}
-      {St. Joseph’s Children’s Centre}{Halifax, NS (On-call/hybrid)}
-      \resumeItemListStart
-        \resumeItem{Revitalized and updated the organization's website, on WordPress \& PHP, to ensure accurate and current information.}
-        \resumeItem{Addressed prior site neglect, resolving issues promptly and ensuring the site now provides up-to-date information.}
-        \resumeItem{Resolved issues with email inquiries resulting in clients in interest sending emails via a form easily.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {\textbf{Web Developer} \emph{\small{(freelance)}}{\small[\href{https://www.parkbomacademy.com}{\underline{Visit}}]}}{Jan 2024 - Mar 2024}
-      {Parkbom Academic Institution}{Geoje, South Korea (remote)}
-      \resumeItemListStart
-        \resumeItem{Led the development and launch of a responsive website using NextJS ensuring 99.99\% uptime via Vercel.}
-        \resumeItem{Developed a website leading to 20\%+ increase in incoming inquiries with many questions answered prior to appointments.}
-        \resumeItem{Collaborated with cross-functional stakeholders to gather feedback including modifying based on business requirements.}
-      \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
-%-----------------------------------------------------------------------------EDUCATION-----------------------------------------------------------------------------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {\textbf{Dalhousie University}}{Sep 2020 -- May 2023}
-      {Bachelor of Computer Science, Minor in Statistics (GPA: 4.15 / 4.3)}{Halifax, NS}
-      \resumeItemListStart
-        \resumeItem{Certifications: Communication Technologies and Cyber Security, Data Science}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-
-
-%-----------------------------------------------------------------------------PROJECTS-----------------------------------------------------------------------------
-\section{Projects}
-    \resumeSubHeadingListStart
-
-      \resumeProjectHeading
-          {\textbf{freddiego.dev} $|$ \emph{NextJS, Sanity.io, TailwindCSS, TypeScript, Vercel, etc.}{\small[\href{https://freddiego.dev}{\underline{Visit}}]}}{Mar 2024 - Present}
-          \resumeItemListStart
-            \resumeItem{Personal portfolio website showcasing expertise with responsive design, constantly evolving with new features where I test and learn newest and the latest technologies.}
-          \resumeItemListEnd
-          
-      \resumeProjectHeading
-          {\textbf{NotifyAll} $|$ \emph{AWS (EC2, DynamoDB, Lambda...), NextJS, Python, Docker, Vercel, etc.}{\small[\href{https://www.youtube.com/watch?v=HWyE7KBI-ww}{\underline{Demo}}]}}{Jan 2023 - Apr 2022}
-          \resumeItemListStart
-            \resumeItem{Developed a SaaS web service with AWS backend and NextJS frontend, aimed to learn Cloud Computing in depth. }
-          \resumeItemListEnd
-
-      \resumeProjectHeading
-          {\textbf{Trello Platform Clone } $|$ \emph{Java, JUnit, JavaScript, React, Material UI, MySQL, etc.}}{May 2022 - Aug 2022}
-          \resumeItemListStart
-            \resumeItem{Cloned and built a meeting management platform, Trello, following agile principles.}
-            
-          \resumeItemListEnd
-
-      \resumeProjectHeading
-          {\textbf{Mini Blogs} $|$ \emph{PHP, MySQL, etc.}{\small[\href{https://web.cs.dal.ca/~dgo/}{\underline{View}}]}}{Sep 2021 - Nov 2021}
-          \resumeItemListStart
-            \resumeItem{Developed a mini blog website with a focus on server-side scripting and frontend-backend integration.}
-          \resumeItemListEnd
-
-    \resumeSubHeadingListEnd
-
-%-----------------------------------------------------------------------------PROGRAMMING SKILLS-----------------------------------------------------------------------------
-\section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{: Java, Python, C/C\#, MySQL, JavaScript, TypeScript, HTML/CSS, PHP, R} \\
-     \textbf{Frameworks}{: Next.js, React, TailwindCSS, JUnit, Material UI, Bootstrap} \\
-     \textbf{Tools/Libraries}{: Pandas, NumPy, Matplotlib, ScikitLearn, Git, Docker, AWS, VSCode, Wireshark, MongoDB, DynamoDB} \\
-     \textbf{Others}{: Vercel, Node.js, Scrum, Agile, RestAPI, IDEs (VSCode, IntelliJ), Figma, Microsoft Office, Slack}
-    }}
- \end{itemize}
-
-%-----------------------------------------------------------------------------Leadership-----------------------------------------------------------------------------
-\section{Leadership Experience}
-    \resumeSubHeadingListStart
-        \resumeLeadershipHeading
-        {\textbf{Course Representative} - Dalhousie University}{}
+        \resumeDoubleLineHeading
+            {\textbf{Machine Learning Operations Engineer Intern - Production Pipeline Team Lead}}{May 2024 - Aug 2024}
+            {VosynAI}{Toronto, ON (remote)}
         \resumeItemListStart
-            \resumeItem{Served as a course representatives for multiple courses to represent the classes. }
-            \resumeItem{Organized feedback, and resolved raised concerns within the classes. Developed strong leadership, and communication skills.}
+            \resumeItem{Led a team of 18 engineers in designing and building a robust pipeline for a global CDN service, aiming to support 200+ million users.}
+            \resumeItem{Orchestrated agile sprints, effectively managing task assignments and team progress through weekly meetings.}
+            \resumeItem{Automated Docker image build and deployment using GitHub Actions/Workflow, integrating with AWS services}
+            \resumeItem{Architected and provisioned scalable AWS infrastructure, including Lambda, EC2, ECR, ECS, and S3, to support the pipeline's development and maintenance.}
+            \resumeItem{Served as the primary point of contact for cross-functional collaboration between different teams and departments.}
+            \resumeItem{Developed Python scripts for efficient processing of multi-modal data, enhancing the user experience by optimizing performance and reducing latency.}
+        \resumeItemListEnd
+    
+        \resumeDoubleLineHeading
+            {\textbf{Full-stack Developer} \emph{\small{(freelance/volunteer)}}}{Dec 2022 - Present}
+            {St. Joseph’s Children’s Centre}{Halifax, NS (On-call/hybrid)}
+        \resumeItemListStart
+            \resumeItem{Revitalized and updated the organization's website, on WordPress \& PHP, to ensure accurate and current information.}
+            \resumeItem{Addressed prior site neglect, resolving issues promptly and ensuring the site now provides up-to-date information.}
+            \resumeItem{Resolved issues with email inquiries resulting in clients in interest sending emails via a form easily.}
         \resumeItemListEnd
 
-    \resumeSubHeadingListEnd
+        \resumeDoubleLineHeading
+            {\textbf{Web Developer} \emph{\small{(freelance)}}{\small[\href{https://www.parkbomacademy.com}{\underline{Visit}}]}}{Jan 2024 - Mar 2024}
+            {Parkbom Academic Institution}{Geoje, South Korea (remote)}
+        \resumeItemListStart
+            \resumeItem{Led the development and launch of a responsive website using NextJS ensuring 99.99\% uptime via AWS.}
+            \resumeItem{Developed a website leading to 20\%+ increase in incoming inquiries with many questions answered prior to appointments.}
+            \resumeItem{Collaborated with cross-functional stakeholders to gather feedback including modifying based on business requirements.}
+        \resumeItemListEnd
 
-%-----------------------------------------------------------------------------Certifications-----------------------------------------------------------------------------
+  \resumeGroupListEnd
+%---------------------------------EDUCATION---------------------------------
+\section{Education}
+    \resumeGroupListStart
+    
+        \resumeDoubleLineHeading
+            {\textbf{Dalhousie University}}{Sep 2020 -- May 2023}
+            {Bachelor of Computer Science, Minor in Statistics (GPA: 4.15 / 4.3)}{Halifax, NS}
+        \resumeItemListStart
+            \resumeItem{Certifications: Communication Technologies \& Cyber Security, Data Science}
+        \resumeItemListEnd
+        
+    \resumeGroupListEnd
+
+%---------------------------------PROJECTS---------------------------------
+\section{Projects}
+    \resumeGroupListStart
+    
+        \resumeSingleLineHeading
+            {\textbf{freddiego.dev} $|$ \emph{NextJS, Sanity.io, TailwindCSS, TypeScript, Vercel, etc.}{\small[\href{https://freddiego.dev}{\underline{Visit}}]}}{Mar 2024 - Present}
+        \resumeItemListStart
+            \resumeItem{Personal portfolio website showcasing expertise with responsive design, constantly evolving with new features where I test and learn the newest and the latest technologies.}
+        \resumeItemListEnd
+          
+        \resumeSingleLineHeading
+            {\textbf{NotifyAll} $|$ \emph{AWS (EC2, DynamoDB, Lambda...), NextJS, Python, Docker, Vercel, etc.}{\small[\href{https://www.youtube.com/watch?v=HWyE7KBI-ww}{\underline{Demo}}]}}{Jan 2023 - Apr 2022}
+        \resumeItemListStart
+            \resumeItem{Developed a SaaS web service with AWS backend and NextJS frontend, aimed to learn Cloud Computing in depth. }
+        \resumeItemListEnd
+
+        \resumeSingleLineHeading
+            {\textbf{Trello Platform Clone } $|$ \emph{Java, JUnit, JavaScript, React, Material UI, MySQL, etc.}}{May 2022 - Aug 2022}
+        \resumeItemListStart
+            \resumeItem{Cloned and built a meeting management platform, Trello, following agile principles.}  
+        \resumeItemListEnd
+
+        \resumeSingleLineHeading
+            {\textbf{Mini Blogs} $|$ \emph{PHP, MySQL, etc.}{\small[\href{https://web.cs.dal.ca/~dgo/}{\underline{View}}]}}{Sep 2021 - Nov 2021}
+        \resumeItemListStart
+            \resumeItem{Developed a mini blog website with a focus on server-side scripting and frontend-backend integration.}
+        \resumeItemListEnd
+
+    \resumeGroupListEnd
+%---------------------------------PROGRAMMING SKILLS---------------------------------
+\section{Technical Skills}
+    \begin{itemize}[leftmargin=0.15in, label={}]
+        \small{\item{
+            \textbf{Languages}{: Java, Python, C/C\#, MySQL, JavaScript, TypeScript, HTML/CSS, PHP, R} \\
+            \textbf{Frameworks}{: Next.js, React, TailwindCSS, JUnit, Material UI, Bootstrap} \\
+            \textbf{Tools/Libraries}{: Pandas, NumPy, Matplotlib, ScikitLearn, Git, Docker, AWS, VSCode, Wireshark, MongoDB, DynamoDB} \\
+            \textbf{Others}{: Vercel, Node.js, Scrum, Agile, RestAPI, IDEs (VSCode, IntelliJ), Figma, Microsoft Office, Slack}
+        }}
+    \end{itemize}
+    \vspace{-15pt}
+%---------------------------------Leadership---------------------------------
+\section{Leadership Experience}
+    \resumeGroupListStart
+        \resumeSingleLineHeading
+            {\textbf{Course Representative} - Dalhousie University}{}
+        \resumeItemListStart
+            \resumeItem{Served as a course representative to represent the classes, developing strong leadership, and communication skills.}
+            % \resumeItem{Organized feedback, and resolved raised concerns within the classes. Developed strong leadership, and communication skills.}
+        \resumeItemListEnd
+        
+    \resumeGroupListEnd
+    % \vspace{-10pt}
+%---------------------------------Certifications---------------------------------
 \section{Certifications \& Awards}
-    \resumeItemListStartWithDate
-        \resumeItemWithDate{Google Data Analytics Certificate}{}
-        \resumeItemWithDate{Docker Foundations Professional Certificate}{}
-        \resumeItemWithDate{Sexton Scholar/Distinctions (Dalhousie University): Awarded to those who maintain 3.85+ GPA}{}
-    \resumeItemListEndWithDate
-
-%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    \resumeGroupListStart
+        \item 
+        \vspace{3pt}
+        \resumeItemListStart
+            \resumeItem{Google Data Analytics Certificate}
+            \resumeItem{Docker Foundations Professional Certificate}
+            \resumeItem{Sexton Scholar/Distinctions (Dalhousie University): Awarded to those who maintain 3.85+ GPA}
+        \resumeItemListEnd
+    \resumeGroupListEnd
+%---------------------------------
 \end{document}
